@@ -1,0 +1,50 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DynamicPageManager</title>
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+    @model ContenManagementSystem.Models.PageManagerView
+    @using (Html.BeginForm("savePageSettings", "Page"))
+    {
+        <div class="container">
+            <div class="row">
+                <label for="page">Page : </label>
+                @Html.DropDownList("Sortby", Model.pages, new { @onchange = "onPageSelectedChange(this.value)" });
+                <br />
+                <label for="section">Section : </label>
+                <select id="section" name="SectionId" onchange="onSectionSelectedChange()">
+                </select>
+                <br />
+                <label for="division">Division : </label>
+                <select id="division" name="DivisionId">
+                </select>
+                <br />
+                <label>Select division types : </label>
+                <div>
+                    <select id="divisionType">
+                        <option value="text">Text</option>
+                        <option value="image">Image</option>
+                        <option value="video">Video (Embed)</option>
+                        <option value="custom">Custom</option>
+                    </select>
+                </div>
+                <label for="sectiontext">Division detail : </label>
+                <textarea rows="2" id="sectiontext" name="Sectiontext"></textarea>
+                <br />
+                <input value="Update" onc/>
+            </div>
+        </div>
+    }
+
+<script type="text/javascript" src="~/Scripts/pageManager.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+﻿
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+alert("I am here");
+
+for (i = 0; i < acc.length; {
+        acc[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        });
+}

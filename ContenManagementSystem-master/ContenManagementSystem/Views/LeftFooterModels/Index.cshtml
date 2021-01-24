@@ -1,0 +1,71 @@
+﻿@model ContenManagementSystem.Models.LeftFooterModel
+
+@{
+    Layout = "~/Shared/_Layout";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.LeftFooterModelID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.para1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.para2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.videourl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.noofLikes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.videoDescription)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.LeftFooterModelID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.para1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.para2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.videourl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.noofLikes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.videoDescription)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

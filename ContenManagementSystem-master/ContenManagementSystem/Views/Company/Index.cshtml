@@ -1,0 +1,62 @@
+﻿@model IEnumerable<ContenManagementSystem.Models.CompanyDescClass>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated && User.IsInRole("Admin"))
+{
+<p>
+@Html.ActionLink("Create New", "Create")
+</p>
+}
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ShortDesc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Website)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telephone)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ShortDesc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Website)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Telephone)
+                </td>
+                <td>
+                    @using Microsoft.AspNet.Identity
+                    @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+                    {
+                        @Html.ActionLink("Edit", "Edit", new { id = item.CompanyDescClassID }) <span>|</span>}
+                    @Html.ActionLink("Preview", "View", new { id = item.CompanyDescClassID })
+                    @using Microsoft.AspNet.Identity
+                    @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+                    {
+                        <span>|</span>
+                        @Html.ActionLink("Delete", "Delete", new { id = item.CompanyDescClassID })}
+                </td>
+            </tr>
+        }
+
+    </table>

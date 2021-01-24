@@ -1,0 +1,26 @@
+﻿@*@model ContenManagementSystem.Models.LeftFooterModel*@
+@model ContenManagementSystem.Models.ViewModel
+
+<div class="LeftFooter" style="width:700px;height:350px;padding:10px 10px 10px 10px 10px;">
+    <div style="padding:5px 0px 2px 0px">
+        @ViewBag.para1
+    </div>
+    <div style="display:flex;flex-direction:row">
+        <div style="">
+            <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="356" height="180" type="text/html" src="https://www.youtube.com/embed/9dae0R3pkEo?autoplay=1&fs=1&iv_load_policy=1&showinfo=1&rel=1&cc_load_policy=1&start=0&end=0&origin=https://youtubeembedcode.com">
+            </iframe>
+            @ViewBag.videourl
+        </div>
+        <div style="font-weight:bold;font-size:20px;margin:5px 0px 0px 10px;">
+            @ViewBag.videodescription
+        </div>
+    </div>
+    <div style="display:flex;flex-direction:row;font-size:14px; color:grey ">
+        <a href="blank" style=" color:grey ; text-decoration:none ;margin: 2px;">Like( @ViewBag.nooflikes )  </a> <a style=" color:grey ; text-decoration:none;margin: 2px;" href="blank"> Share</a><a href="blank" style=" color:grey ; text-decoration:none;margin:2px;">  Comment  </a>
+
+    </div>
+    <div style="background-color:grey;color:grey;background-color:azure;width:356px;">
+        <i class="fa fa-thumbs-up"></i>
+        Savvy,Christopher,nancy +4 like this
+    </div>
+</div>

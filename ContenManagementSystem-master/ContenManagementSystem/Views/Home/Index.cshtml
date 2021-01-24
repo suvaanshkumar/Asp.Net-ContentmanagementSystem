@@ -1,0 +1,72 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<div class="sharedBanner"></div>
+<div class="jumbotron">
+    @using Microsoft.AspNet.Identity
+    @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+    {
+        <h1>Admin Dashboard</h1>
+    }
+    else
+    {
+        <h1>ASP.NET</h1>
+    }
+</div>
+
+<div class="row ">
+    @using Microsoft.AspNet.Identity
+    @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+    {
+        <div class="col-md-4">
+            <h2>Page Management</h2>
+            <p>
+                Create new custom pages with our brand new tool.
+            </p>
+            <p><a class="btn btn-default dashbtn" href="@Url.Content("/Page/PageCreator")">Add Page &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Section Management</h2>
+            <p>Enjoy the power of Contiii</p>
+            <p>
+                <a class="btn btn-default dashbtn" href="@Url.Content("/Company/Index")">List Companies &raquo;</a>
+                <a class="btn btn-default dashbtn" href="@Url.Content("/Company/Create")">Create Company&raquo;</a>
+                <a class="btn btn-default dashbtn" href="@Url.Content("/Company/CreateNew")">Quick Create Company&raquo;</a>
+                <a class="btn btn-default dashbtn" href="@Url.Content("/LeftFooterModels/Index")">View Footer&raquo;</a>
+                <a class="btn btn-default dashbtn" href="@Url.Content("/LeftFooterModels/Edit/1")">Edit Footer&raquo;</a>
+            </p>
+        </div>
+        <div class="col-md-4">
+            <h2>Website Management</h2>
+            <p>how cares about it?</p>
+            <p><a class="btn btn-default dashbtn" href="@Url.Content("/FAQ")">Edit FAQs &raquo;</a></p>
+        </div>
+    }
+    else
+    {
+        <div class="col-md-4">
+            <h2>Giving Feedback</h2>
+            <p>
+                Giving feedback is an opportunity to get things out in the open so that
+                issues can be resolved and they can find ways to work together better. Moreover,
+                regular feedback can prevent conflict from happening in the first place. 
+                Small issues can be resolved before they have a chance to escalate into something bigger.
+            </p>
+            <p><a class="btn btn-default dashbtn" href="@Url.Content("feedBackPages/Create")">Give us Feedback &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Explore Companies</h2>
+            <p>businesses are important because they provide opportunities for entrepreneurs and create
+            meaningful jobs with greater job satisfaction than positions with larger, traditional companies. 
+            They foster local economies, keeping money close to home and supporting neighborhoods and communities</p>
+            <p><a class="btn btn-default dashbtn" href="@Url.Content("/Company/")">Explore &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Contact us</h2>
+            <p>If we receieve your messages. Right away, we won't read them. At all.</p>
+            <p><a class="btn btn-default dashbtn" href="@Url.Content("/feedBackPages/SendEmail")">Explore &raquo;</a></p>
+        </div>
+    }
+
+
+</div>

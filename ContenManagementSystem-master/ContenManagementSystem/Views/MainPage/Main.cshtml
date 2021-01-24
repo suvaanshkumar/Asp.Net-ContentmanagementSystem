@@ -1,0 +1,30 @@
+﻿@model ContenManagementSystem.Models.ViewModel
+
+@{
+    ViewBag.Title = "Welcome";
+}
+
+
+
+<div class="welcome">
+
+
+    <div class="left">
+    </div>
+
+    <div class="main">
+
+        <p>Welcome to</p>
+        <h1>Contiii</h1>
+        <p>Content Management System</p>
+
+        <br />
+        <a href="@Url.Content("/Account/Register")" class="btn btn-primary btn-lg">Register</a>
+        &nbsp;
+        <a href="@Url.Content("/Account/Login")" class="btn btn-primary btn-lg">Login</a>
+    </div>
+
+    <div class="right">
+    </div>
+
+</div>

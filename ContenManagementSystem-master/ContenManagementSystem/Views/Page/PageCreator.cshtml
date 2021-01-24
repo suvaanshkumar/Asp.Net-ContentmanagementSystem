@@ -1,0 +1,61 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>PageCreator</title>
+</head>
+<body>
+    <div style="padding-top:60px;">
+        <div id="errors" style="color:red;"></div>
+        <p>
+            <label>Page Name : </label>
+            <input type="text" name="pageName" id="pageName" value="" placeholder="Page Name" />
+        </p>
+        <p>
+            <label>Number of sections : </label>
+            <input type="number" name="numberOfSections" id="numberOfSections" min="1" max="10" onchange="onChangeNumberOfSections()" />
+        </p>
+        <p>
+            @*<label>Select section number : </label>
+            <select id="sectionNumber" onchange="onChangeSectionNumber()">
+                <option value="0">-- Select one --</option>
+            </select>*@
+            <div id="sectionDivisions"></div>
+        </p>
+        @*<p>
+            <label>Number of divisions : </label>
+            <select id="numberOfDivisions" onchange="onChangeNumberOfDivisions()">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="6">6</option>
+                <option value="12">12</option>
+            </select>
+        </p>
+        <p>
+            <label>Select division number : </label>
+            <select id="divisionNumber">
+                <option value="0">-- Select One --</option>
+            </select>
+        </p>
+        <label>Select division types : </label>
+            <div>
+                <select id="divisionType">
+                    <option value="text">Text</option>
+                    <option value="image">Image</option>
+                    <option value="video">Video (Embed)</option>
+                    <option value="custom">Custom</option>
+                </select>
+            </div>*@
+        <button id="Save" onclick="save2()">Save</button>
+    </div>
+    <script type="text/javascript" src="~/Scripts/pageCreator.js"></script>
+</body>
+</html>

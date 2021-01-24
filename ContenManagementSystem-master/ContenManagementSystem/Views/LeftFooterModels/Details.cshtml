@@ -1,0 +1,74 @@
+﻿@model ContenManagementSystem.Models.LeftFooterModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>LeftFooterModel</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.LeftFooterModelID)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.LeftFooterModelID)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.para1)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.para1)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.para2)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.para2)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.videourl)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.videourl)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.noofLikes)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.noofLikes)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.videoDescription)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.videoDescription)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

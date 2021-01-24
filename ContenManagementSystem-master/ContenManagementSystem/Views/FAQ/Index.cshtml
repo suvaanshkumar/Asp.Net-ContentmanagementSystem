@@ -1,0 +1,119 @@
+﻿@model PagedList.IPagedList<ContenManagementSystem.Models.FrequentQuestion>
+
+@using PagedList.Mvc;
+@Scripts.Render("~/bundles/FAQ")
+
+@{
+    ViewBag.Title = "FAQs";
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<h2>Frequently Asked Questions</h2>
+<br />
+@using (Html.BeginForm())
+{
+    <div class="FAQsearch">
+        <div class="search">
+            <input type="text" class="searchTerm" name="SearchString" placeholder="How can't we help you?" style="width:100%;" value="@ViewBag.CurrentFilter">
+            <button type="submit" class="searchButton">
+                <i class="fa fa-search"></i>
+            </button>
+        </div>
+    </div>
+}
+
+
+<div class="FAQcontainer">
+
+
+    <div class="sidenav">
+
+
+
+
+
+        @if (ViewBag.CategorySelected)
+        {
+            <div class="category">
+                @Html.ActionLink("Show All", "Index")<span> </span><i class="fa fa-close" style="color: #337ab7;"></i>
+            </div>
+        }
+
+
+        @foreach (var item in ViewBag.Categories)
+        {
+            <div class="category">
+                @Html.ActionLink((string)item, "Index", new { Category = (string)item })
+            </div>
+        }
+
+    </div>
+
+
+
+
+
+    <div class="content" id="FAQ">
+
+        @using Microsoft.AspNet.Identity
+        @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+        {
+            <p>
+                @Html.ActionLink("Create New", "Create")
+            </p>
+        }
+
+
+        @foreach (var item in Model)
+        {
+            <button class="accordion">
+                @Html.DisplayFor(modelItem => item.Question)
+
+                <span style="float:right">
+                    @using Microsoft.AspNet.Identity
+                    @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+                    {
+                        @Html.ActionLink("Edit", "Edit", new { id = item.FrequentQuestionID })
+                        <span>|</span>
+                        @Html.ActionLink("Delete", "Delete", new { id = item.FrequentQuestionID })
+                    }
+                </span>
+            </button>
+            <div class="panel">
+                <p>
+                    @Html.DisplayFor(modelItem => item.Answer)
+
+
+                </p>
+            </div>
+
+            <br />
+        }
+
+
+    <span>
+        @Html.PagedListPager(Model, page => Url.Action("Index",
+            new { page, currentFilter = ViewBag.CurrentFilter }))
+    </span>
+        
+    </div>
+    </div>
+
+
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (var i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }</script>
+

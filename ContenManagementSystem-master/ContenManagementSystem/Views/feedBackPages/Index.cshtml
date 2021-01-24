@@ -1,0 +1,49 @@
+﻿@model ContenManagementSystem.Models.feedBackPage
+
+@{
+    ViewBag.Title = "Index";
+   // Layout = "~/Shared/_Layout";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("edit", "Edit")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.senderEmailAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.feedBack)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.rating)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.subject)
+        </th>
+        <th></th>
+    </tr>
+
+
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => modelItem.senderEmailAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => modelItem.feedBack)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => modelItem.rating)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => modelItem.subject)
+        </td>
+        
+    </tr>
+}
+
+</table>

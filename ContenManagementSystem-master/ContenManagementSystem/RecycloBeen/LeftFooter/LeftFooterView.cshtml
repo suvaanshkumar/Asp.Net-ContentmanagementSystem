@@ -1,0 +1,52 @@
+﻿@model ContenManagementSystem.Models.LeftFooterModel 
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width" />
+    <title>LeftFooterView</title>
+    <style>
+        .fa {
+            font-size: 30px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+            .fa:hover {
+                color: darkblue;
+            }
+    </style>
+</head>
+<body>
+    <a href="https://localhost:44367/LeftFooter/edit" >click here to edit:</a>
+    
+    <div id="first_div" style="width:700px;height:350px;padding:10px 10px 10px 10px 10px;">
+        <div id="first_div_1" style="padding:5px 0px 2px 0px">
+            @Html.DisplayNameFor(model => model.para1)
+        </div>
+        <div id="first_div_2" style="display:flex;flex-direction:row">
+            <div style="">
+                <iframe id="videoFrame" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="356" height="180" type="text/html" src="https://www.youtube.com/embed/9dae0R3pkEo?autoplay=1&fs=1&iv_load_policy=1&showinfo=1&rel=1&cc_load_policy=1&start=0&end=0&origin=https://youtubeembedcode.com">
+                </iframe>
+                @ViewBag.videourl
+            </div>
+            <div id="videoDescription" style="font-weight:bold;font-size:20px;margin:5px 0px 0px 10px;">
+                @ViewBag.videodescription
+            </div>
+        </div>
+        <div id="likes" style="display:flex;flex-direction:row;font-size:14px; color:grey ">
+            <a id="nooflikesAnchor" href="blank" style=" color:grey ; text-decoration:none ;margin: 2px;">Like( @ViewBag.nooflikes )  </a> <a id="shareAnchor" style=" color:grey ; text-decoration:none;margin: 2px;" href="blank"> Share</a><a id="commentsAnchor" href="blank" style=" color:grey ; text-decoration:none;margin:2px;">  Comment  </a>
+
+        </div>
+        <div style="background-color:grey;color:grey;background-color:azure;width:356px;">
+            <i class="fa fa-thumbs-up"></i>
+            Savvy,Christopher,nancy +4 like this
+        </div>
+    </div>
+</body>
+</html>

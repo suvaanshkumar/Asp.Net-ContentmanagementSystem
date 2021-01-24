@@ -1,0 +1,9 @@
+﻿
+@{
+    ViewBag.Title = "DynamicPage";
+    Layout = "~/Views/Shared/_DynamicLayout.cshtml";
+}
+<style>img{max-width:100%;max-height:100%;}</style>
+    <div id="Container">
+        @(new HtmlString(ViewData["innerHtml"].ToString()))
+    </div>
